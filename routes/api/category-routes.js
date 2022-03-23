@@ -10,17 +10,17 @@ router.get('/', (req, res) => {
       attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
     }
   })
-  .then(dbCategoryData => {
-    if (!dbCategoryData) {
-      res.status(404).json({message: 'No categories found'});
-      return;
-    }
-    res.json(dbCategoryData);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+    .then(dbCategoryData => {
+      if (!dbCategoryData) {
+        res.status(404).json({ message: 'No categories found' });
+        return;
+      }
+      res.json(dbCategoryData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 router.get('/:id', (req, res) => {
@@ -30,19 +30,19 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    include: 
-      {
+    include:
+    {
       model: Product,
       attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
-      }
-  })
-  .then(dbCategoryData => {
-    if (!dbCategoryData) {
-      res.status(404).json({message: 'No categories found'});
-      return;
     }
-    res.json(dbCategoryData);
   })
+    .then(dbCategoryData => {
+      if (!dbCategoryData) {
+        res.status(404).json({ message: 'No categories found' });
+        return;
+      }
+      res.json(dbCategoryData);
+    })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -51,14 +51,14 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // create a new category
-  Category.create ({
+  Category.create({
     category_name: req.body.category_name
   })
-  .then(dbCategoryData => res.json(dbCategoryData))
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err)
-  });
+    .then(dbCategoryData => res.json(dbCategoryData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err)
+    });
 });
 
 router.put('/:id', (req, res) => {
@@ -70,7 +70,7 @@ router.put('/:id', (req, res) => {
   })
     .then(dbCategoryData => {
       if (!dbCategoryData) {
-        res.status(404).json({message:'No category found with this id'});
+        res.status(404).json({ message: 'No category found with this id' });
         return;
       }
       res.json(dbCategoryData);
@@ -89,8 +89,8 @@ router.delete('/:id', (req, res) => {
     }
   })
     .then(dbCategoryData => {
-      if (!dbCategoryData){
-        res.status(404).json({message: 'No category found with that id.'});
+      if (!dbCategoryData) {
+        res.status(404).json({ message: 'No category found with that id.' });
         return;
       }
       res.json(dbCategoryData);
