@@ -20,8 +20,27 @@ In the back end, you are able to create, update, read and delete data in the dat
 
 Below is the demo walkthrough videos that demonstrate the functionality of the application and all of the POST, PUT and DELETE routes for products, tags and categories being tested in Insomnia.
 
+* Create schema, seed data and start application
 
-![Demo of functionality of application](./Develop/animations/Ecommerce_db%20-%20Schema%20%26%20Seeds.mp4)
+<img src="./animations/schema%2Cseed%2Cstart.gif">
+
+* GET routes for all categories, products and tags being tested in Insomnia
+<img src="./animations/GET%20all.gif">
+
+* GET routes for a single category, product and tag being tested in Insomnia
+<img src="./animations/GET%20one.gif">
+
+* POST, PUT & DELETE routes for products being tested in Insomnia
+<img src="./animations/product.gif">
+
+* POST, PUT & DELETE routes for categories being tested in Insomnia
+<img src="./animations/category.gif">
+
+* POST, PUT & DELETE routes for tags being tested in Insomnia
+<img src="./animations/tag.gif">
+
+
+<!-- ![Demo of functionality of application](./animations/GET%20all.gif) -->
 
 ## Deployment
 
