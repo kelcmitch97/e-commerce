@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
         return;
       }
 
-      res.json(dbTagData[0].products);
+      res.json(dbTagData);
     })
     .catch(err => {
       console.log(err);
